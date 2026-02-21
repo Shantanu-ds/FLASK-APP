@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import pickle
 import sklearn
 
@@ -16,8 +16,8 @@ def pinger():
 def json_check():
     return {"message": "Hi i am json!"}
 
-model_pickle = open("./classifier.pkl", "rb")
-clf = pickle.load(model_pickle)
+with open("classifier.pkl", "rb") as f:
+    clf = pickle.load(f)
 
 @app.route("/predict", methods=['POST'])
 def prediction():
@@ -44,4 +44,7 @@ def prediction():
     else:
         pred = "Approved"
 
-    return {"loan_approval_status": pred}
+    return jsonify({"loan_approval_status": pred})
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5000)
