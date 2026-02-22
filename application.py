@@ -10,7 +10,6 @@ with col1:
 with col2:
     married=st.radio("Select Martial Status:",('Yes','No'))
 
-
 ApplicantIncome=st.number_input("Enter Applicant Income:")
 LoanAmount=st.number_input("Enter Loan Amount:")
 Credit_History=st.number_input("Enter Credit History(0 or 1):")

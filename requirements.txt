@@ -1,5 +1,5 @@
 pandas
-numpy==2.4.2
-scikit-learn==1.7.2
+numpy
+scikit-learn
 flask
 pytest
