@@ -24,7 +24,7 @@ jobs:
       
       - name: Run test cases
         run: pytest test_loan_app_cicd.py
-
+  # Deploy to AWS ECS
   job2:
     needs: job1
     runs-on: ubuntu-latest
