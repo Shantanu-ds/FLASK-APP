@@ -8,7 +8,7 @@ on:
     branches: [ "main" ]
 
 env:
-  ECR_REPOSITORY: "537394543568.dkr.ecr.us-west-2.amazonaws.com/loan-flask-app"           # set this to your Amazon ECR repository name
+  ECR_REPOSITORY: loan-flask-app           # set this to your Amazon ECR repository name
   ECS_SERVICE: loan-flask-app                 # set this to your Amazon ECS service name
   ECS_CLUSTER: loan-flask-app                 # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: loan-flask-app         # set this to the path to your Amazon ECS task definition
