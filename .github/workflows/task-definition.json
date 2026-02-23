@@ -1,0 +1,29 @@
+{
+  "family": "loan-flask-app",
+  "networkMode": "bridge",
+  "containerDefinitions": [
+    {
+      "name": "loan-flask-app",
+      "image": "REPLACE_IMAGE",
+      "essential": true,
+      "cpu": 256,
+      "memory": 512,
+      "portMappings": [
+        {
+          "containerPort": 5000,
+          "hostPort": 5000,
+          "protocol": "tcp"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/loan-flask-app",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "requiresCompatibilities": ["EC2"]
+}
